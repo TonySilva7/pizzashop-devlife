@@ -7,12 +7,14 @@ export const api = axios.create({
   withCredentials: true,
 })
 
-// const mockDelayRequest = 2000
+const mockDelayRequest = 3000
 
-// if (mockDelayRequest) {
-//   api.interceptors.request.use(async (config) => {
-//     await new Promise((resolve) => setTimeout(resolve, mockDelayRequest))
+if (mockDelayRequest) {
+  api.interceptors.request.use(async (config) => {
+    await new Promise((resolve) =>
+      setTimeout(resolve, Math.round(Math.random() * mockDelayRequest)),
+    )
 
-//     return config
-//   })
-// }
+    return config
+  })
+}
