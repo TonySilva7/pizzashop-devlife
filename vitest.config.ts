@@ -6,4 +6,9 @@ export default defineConfig({
     setupFiles: ['./test/setupTests.ts'],
     environment: 'happy-dom',
   },
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
 })
